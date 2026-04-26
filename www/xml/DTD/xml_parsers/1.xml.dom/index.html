@@ -1,0 +1,19 @@
+<html>
+    <head><title>XML DOM PARSER</title></head>
+    <body>
+        <h1 id="demo"></h1>
+        <script>
+            var text, parser, xmlDOC;
+            text = "<bookstore><book>"+
+                        "<title>Everyday Nepal</title>"+
+                        "<author>Upasana Thapa</author>"+
+                        "<year>2004</year>"+
+                        "</book></bookstore>";
+
+            parser = new DOMParser();
+            xmlDOC = parser.parseFromString(text, "text/xml");
+
+            document.getElementById("demo").innerHTML = xmlDOC.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+        </script>
+    </body>
+</html>

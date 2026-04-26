@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+
+<body>
+    <h1>Form Details</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div class="field-group">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="fname" value="">
+            </div>
+            <div class="field-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" value="">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Form Fields</legend>
+            <div class="field-group">
+                <label for="serives">Services</label>
+                <select name="service" id="service" multiple>
+                    <option>Choose Service</option>
+                    <optgroup label="Food Services">
+                        <option value="Food Delivery">Food Delivery</option>
+                        <option value="Street Food">Street Food</option>
+                    </optgroup>
+                    <optgroup label="IT Support">
+                        <option value="Computer Maintenance">Computer Maintenance</option>
+                        <option value="Web Design & Development">Web Design & Development</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="field-group">
+                <label for="msg">Message</label>
+                <textarea name="msg" id="msg" rows="6" cols="36" placeholder="Write you message..."></textarea>
+                <!--textarea is a multi-line field-->
+            </div>
+            <div class="field-group">
+                <h4 class="field-title">Gender</h4>
+                <div class="subfield-group">
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                </div>
+                <div class="subfield-group">
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </div>
+                <div class="subfield-group">
+                    <input type="radio" id="others" name="gender" value="Others">
+                    <label for="others">Others</label>
+                </div>
+            </div>
+            <div class="field-group">
+                <h4 class="field-title">Order Food</h4>
+                <div class="subfield-group">
+                    <input type="checkbox" id="pizza" name="order_food" value="Pizza">
+                    <label for="pizza">Pizza</label>
+                </div>
+                <div class="subfield-group">
+                    <input type="checkbox" id="momo" name="order_food" value="Mo:Mo">
+                    <label for="momo">Mo:Mo</label>
+                </div>
+                <div class="subfield-group">
+                    <input type="checkbox" id="chowmein" name="order_food" value="Chowmein">
+                    <label for="chowmein">Chowmein</label>
+                </div>
+            </div>
+            <div class="field-group">
+                <label for="arrival">Arrival</label>
+                <input type="datetime-local" name="arrival" id="arrival" value="">
+            </div>
+            <div class="field-group">
+                <label for="departure">Departure</label>
+                <input type="date" name="departure" id="departure" value="">
+            </div>
+            <div class="field-group">
+                <label for="price">Price</label>
+                <input type="range" id="price" name="price" value="">
+            </div>
+            <div class="field-group">
+                <label for="qty">Quantity</label>
+                <input type="number" id="qty" name="qty" value="">
+            </div>
+        </fieldset>
+        <button type="submit" name="submit">Submit Now</button>
+    </form>
+</body>
+
+</html>

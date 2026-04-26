@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="qualified">
+    <!-- Having empty complex type element 
+        The usecase will be: -->
+    <!-- Defining element -->
+    <xsd:element name="firstname" type="FirstNameType" />
+    <xsd:complexType name="FirstNameType">
+        <!-- Defining information, 
+            Particular attribute (rollnumber)
+            <xsd:attribute></xsd:attribute>
+            OR
+            <xsd:attribute />
+            If type/datatype is not defined, it will take anytype by default.
+        -->
+        <xsd:attribute name="rollnumber" type="xsd:integer" />
+    </xsd:complexType>
+</xsd:schema>

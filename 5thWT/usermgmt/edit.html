@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit | User Management</title>
+    <link rel="stylesheet" href="./main.css">
+
+</head>
+<body>
+    <main class="container" id="contanier">
+        <h1 class="page-title">Register User</h1>
+        <form action="update.php" method="post" name="user_form" enctype="multipart/form-data">
+        <input type="hidden" name="user_id" value="1">
+            <div class="field-group">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="fullname" value="" placeholder="Ex:Ram Prasad">
+            </div>
+            <div class="field-group">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" name="username" value="Chirag.name" placeholder="Ex:myuser" disabled>
+            </div>
+            <div class="field-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" value="chirag.name@gmail.com" placeholder="Ex:email@domain.com" disabled>
+            </div>
+            <div class="field-group">
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo" value="">
+            </div>
+            <input type="submit" name="submit" value="edit">
+        </form>
+        
+        <div class="btn-group">
+            <span class="note">
+               Already have an account? <a href="login.html" class="text-link" title="Login User">Login User</a>
+            </span><hr>
+            <a href="index.html" class="text-link" title="Go To Home">&larr;Go To Home</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+Database
+Entity- users
+
+users_fields
+    - id:INT
+    - fullname:VARCHAR(30)
+    - username:VARCHAR(30)
+    - email:VARCHAR(50)
+    - password:VARCHAR(250)
+    - address:VARCHAR(100)
+    - phone:VARCHAR(20)
+    - status:BOOLEAN
+    - created_at:TIMESTAMP
+    - updated_at:TIMESTAMP
+
+SQL:
+CREATE DATABASE nagarjuna;
+
+CREATE TABLE users(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    fullname VARCHAR(30) NULL,
+    username VARCHAR(30) UNIQUE NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(250) NOT NULL,
+    address VARCHAR(100) NULL,
+    phone VARCHAR(20) NULL,
+    status BOOLEAN DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL
+);

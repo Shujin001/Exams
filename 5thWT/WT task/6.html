@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Float, Clearfix & Positioning Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .container-no-clearfix {
+            border: 2px solid red;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .container-clearfix {
+            border: 2px solid green;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .box {
+            width: 30%;
+            float: left;
+            margin: 1.66%;
+            padding: 20px;
+            background-color: lightblue;
+            border: 2px solid #333;
+            text-align: center;
+        }
+
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .static-box {
+            position: static;
+            background-color: lightgray;
+            padding: 15px;
+            margin-top: 20px;
+            border: 2px dashed black;
+        }
+
+
+        .relative-box {
+            position: relative;
+            top: 10px;
+            left: 20px;
+            background-color: lightgreen;
+            padding: 15px;
+            border: 2px dashed green;
+        }
+
+
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: darkblue;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Float, Clearfix & Positioning</h1>
+
+
+    <section>
+        <h2>1. Float WITHOUT Clearfix (Container Collapse)</h2>
+
+        <div class="container-no-clearfix">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+
+        <p>
+            <strong>Observation:</strong> The red container does NOT wrap around the floated boxes
+            because floating removes elements from the normal document flow.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>2. Float WITH Clearfix (Problem Solved)</h2>
+
+        <div class="container-clearfix clearfix">
+            <div class="box">Box A</div>
+            <div class="box">Box B</div>
+            <div class="box">Box C</div>
+        </div>
+
+        <p>
+            <strong>Observation:</strong> The green container correctly wraps around floated elements
+            using the clearfix technique.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>3. CSS Positioning</h2>
+
+        <div class="static-box">
+            This box uses <strong>position: static</strong> (default positioning).
+        </div>
+
+        <div class="relative-box">
+            This box uses <strong>position: relative</strong> and is shifted using top and left.
+        </div>
+    </section>
+
+    <div class="fixed-button">
+        Fixed Button
+    </div>
+
+</body>
+</html>

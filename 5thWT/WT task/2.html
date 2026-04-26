@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, textarea {
+            width: 300px;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Contact Form</h2>
+
+    <form onsubmit="return validateForm()">
+        <!-- Name -->
+        <label>Name:</label><br>
+        <input type="text" id="name">
+        <div id="nameError" class="error"></div><br>
+
+        <!-- Email -->
+        <label>Email:</label><br>
+        <input type="text" id="email">
+        <div id="emailError" class="error"></div><br>
+
+        <!-- Message -->
+        <label>Message:</label><br>
+        <textarea id="message" rows="4"></textarea>
+        <div id="messageError" class="error"></div><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+
+            // Get field values
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            // Error fields
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("messageError").innerHTML = "";
+
+            let isValid = true;
+
+            // a. Name validation (not empty)
+            if (name === "") {
+                document.getElementById("nameError").innerHTML = "Name should not be empty";
+                isValid = false;
+            }
+
+            // b. Email validation (REGEX)
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerHTML = "Enter a valid email address";
+                isValid = false;
+            }
+
+            // Minimum 10 characters
+            let messagePattern = /^.{10,}$/;
+            if (!messagePattern.test(message)) {
+                document.getElementById("messageError").innerHTML = "Message must be at least 10 characters long";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+
+</body>
+</html>

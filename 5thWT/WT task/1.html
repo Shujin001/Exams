@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Cookies Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Cookie Operations using JavaScript</h2>
+
+    <button onclick="createCookie()">Create Cookie</button>
+    <button onclick="readCookie()">Read Cookie</button>
+    <button onclick="deleteCookie()">Delete Cookie</button>
+
+    <div id="output"></div>
+
+    <script>
+        // Create Cookie
+        function createCookie() {
+            document.cookie = "username=Chirag; expires=Fri, 31 Dec 2026 12:00:00 UTC; path=/";
+            document.getElementById("output").innerHTML = "Cookie Created Successfully!";
+        }
+
+        // Read Cookie
+        function readCookie() {
+            let cookies = document.cookie;
+            if (cookies.length !== 0) {
+                document.getElementById("output").innerHTML = "Cookies: " + cookies;
+            } else {
+                document.getElementById("output").innerHTML = "No cookies found!";
+            }
+        }
+
+        // Delete Cookie
+        function deleteCookie() {
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            document.getElementById("output").innerHTML = "Cookie Deleted Successfully!";
+        }
+    </script>
+
+</body>
+</html>

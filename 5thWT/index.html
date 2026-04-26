@@ -1,0 +1,177 @@
+<!-- Document Declaration -->
+<!DOCTYPE html><!-- HTML5 -->
+<!-- Document root -->
+<html lang="en">
+<!-- Document Head-->
+
+<head>
+   <!-- Page informations and support links -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>First HTML</title>
+</head>
+<!-- Document body -->
+
+<body>
+   <!-- Page Design Structure -->
+   <!-- Header Section -->
+
+   <!-- Main-content Section -->
+   <h1>Hello Webpage</h1>
+   <p>This is first paragraph.</p>
+   <p>H<sub>2</sub>O</p>
+   <p>X<sup>2</sup></p>
+   <p><b>Lorem, ipsum</b> <i>dolor sit amet</i> consectetur adipisicing elit. Iure, consequuntur!</p>
+   <p><strike>Rs.150000</strike><b>Rs. 100000</b></p>
+   <p><b><i>Bold Text including itallic form</i></b></p>
+   <img src="./logo.png" alt="Sports Profile" width="200">
+
+   <h2>Typographic update on HTML5</h2>
+   <p><strong>Lorem, ipsum</strong> <em>dolor sit amet</em> consectetur adipisicing elit. Iure, consequuntur!</p>
+   <p><del>Rs.150000</del><strong>Rs. 100000</strong></p>
+   <p><strong><em>Bold Text including itallic form</em></strong></p>
+   <figure>
+      <img src="./logo.png" alt="Sports Profile" width="200">
+      <figcaption>Sports Profile</figcaption>
+   </figure>
+
+   <pre>
+      HTML4: Content structure maintained
+      HTML5: Semantic update on content structure
+
+      HTML5 = HTML5 + Newly introduced semantic tags.
+      <strong>Study HTML4 vs HTML5</strong>
+   </pre>
+   <xmp>
+      Gives tags/structure example not output:
+
+      example: <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h6>Heading 5</h6>
+      <h6>Heading 6</h6>
+   </xmp>
+   <pre>
+      Added graphics on HTML5:
+         - Audio
+         - Video
+         - SVG (Scalable Vector Graphics) [Specially for icons]
+         - canvas [Specially for statistical data chart or infographics] (need JS)
+
+         <audio src="" controls autoplay loop></audio>
+         <video src="./video.mp4" controls muted autoplay loop width="300"></video>
+         OR, 
+         <video controls autoplay loop width="300">
+            <source src="./video.mp4" type="">
+            <source src="">
+            <source src="">
+         </video>
+   </pre>
+   <xmp>
+      HTML4 vs. HTML5
+      ------------------------------------------------------------------------------------------------------------------------
+      Typo: H1-H6, p, sup, sub, HTML4 +: replace:
+      b, i, strike, etc. b -> strong
+      i -> em
+      strike -> del
+
+      Graphics: img HTML4 +: audio, video,
+      svg, canvas
+
+      Layout: div HTML4 +: header, footer, main,
+      ex: <div class="header" role="Header"></div> section, article, aside,
+      nav, figure
+      ex: <header class="header"></header>
+
+      Layout: table (tr, td) HTML4 +: thead, tbody, tfoot, th
+
+      Form: form, input (text, checkboz, radio, HTML4 +: New input-tyes (ex: email),
+      submit, reset), select, textarea, etc. HTML5 form-input validation
+      (ex; 'required' attribute)
+
+      List type: ordered-list (ol), unordered-list (ul) HTML4 +: Definition-list (dl)
+      -child: li -child: dt, dd
+   </xmp>
+
+   <h2>List Types</h2>
+   <h3>Ordered List</h3>
+   <ol type="I">
+      <li>More Details Here</li>
+      <li>More Details Here</li>
+      <li>More Details Here</li>
+      <li>More Details Here</li>
+   </ol>
+   <h3>Unordered List</h3>
+   <ul type="I">
+      <li>More Details Here</li>
+      <li>More Details Here</li>
+      <li>More Details Here</li>
+      <li>More Details Here</li>
+   </ul>
+   <h3>Nested list</h3>
+   <ul>
+      <li>Best College in Nepal</li>
+      <li>
+         <h4>IT Colleges in Nepal</h4>
+         <ol>
+            <li>Nagarjuna College of IT</li>
+            <li>Padmakanya Campus</li>
+            <li>Patan Multiple Campus</li>
+         </ol>
+      </li>
+   </ul>
+   <h3>Definition List</h3>
+   <dl>
+      <dt>Why B.Sc.CSIT?</dt>
+      <dd>BSc.CSIT information goes here...</dd>
+      <dt>Best College for BSc. CSIT in Nepal</dt>
+      <dd>
+         The best college for BSc.CSIT in Nepal are listed below:
+         <ul>
+            <li>Nagarjuna College of IT</li>
+            <li>Padmakanya Campus</li>
+            <li>Patan Multiple Campus</li>
+         </ul>
+      </dd>
+   </dl>
+
+   <h2>Link (Anchor) types</h2>
+   <h3>Text Link</h3>
+   <a href="#" title="Read More">Read More</a>
+   Or, <a href="/contact.html" title="Contact">Contact Us</a>
+   Or, <a href="https://google.com/" title="Google" target="_blank">Open Google</a>
+   <h3>Telephone Link</h3>
+   <a href="tel: +977 9840051645" title="+977 9840051645">+977 9840051645</a>
+   <h3>E-Mail Link</h3>
+   <a href="mailto: sharmachirag2060@gmail.com" title="sharmachirag2060@gmail.com">sharmachirag2060@gmail.com</a>
+   <h3>Image Link</h3>
+   <a href="./logo.png" title="Logo File" target="_blank">
+      <img src="./logo.png" alt="Logo File">
+   </a>
+
+   <h2>Frames</h2>
+   <ul>
+      <li>frameset and frame</li>
+      <li><strong>iframe</strong>: ex: Google map, Youtube Video</li>
+   </ul>
+   <p><strong>Note</strong><br>
+      - frameset helps to show multiples pages inside a window by spliting area. <br><br>
+      - iframe helps to embed interface of other webpage content woth complete features <br><br>
+      - Both frameset and iframe includes HTML document inside main HTML document.
+   </p>
+   <h3>iframe example:</h3>
+   <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4011.6692258582584!2d85.3273001754664!3d27.679802776198372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19ca771e9e55%3A0xc94f84d1f057520f!2sNagarjuna%20College%20of%20IT!5e1!3m2!1sen!2snp!4v1765780060131!5m2!1sen!2snp"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+   <h4>YouTube Video</h4>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/N9FMaFAJZFA?si=wVnlQmAAEgN-X8zx"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   <!-- Footer Section -->
+
+</body>
+
+</html>

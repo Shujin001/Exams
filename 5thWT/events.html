@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body onorientationchange="alert('Window event tested.');">
+    <h1>HTML Events</h1>
+    <pre>
+        *Note: HTML events uses JaveScript.
+
+        Event Types:
+            - Keyboard Event (onekeyup, onekeydown, etc.)
+            - Mouse Event (oneclick, onmousehover, etc.)
+            - Form Event (onsubmit, onchange, etc.)
+            - Window Event (onload, onorentationchange, etc.)
+    </pre>
+    <h2>Examples:</h2>
+    <button type="button" onclick="alert('You clicked me!');">Click me!</button>
+    <input type="text" value="" placeholder="Write you message." onkeydown="console.log(this.value);">
+    <div class="field-group">
+        <label for="service">Service</label>
+        <select name="service" id="service" onchange="alert(this.value);">
+            <option>Choose Service</option>
+            <option value="Food Delivery">Food Delivery</option>
+            <option value="Computer Maintenance">Computer Maintenance</option>
+        </select>
+    </div>
+    <h2>Show/Hide Paragraph</h2>
+    <div class="box">                                                                                                                   
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, illum eos.</p>
+        <button class="button" onclick="this.parentNode.children[0].style.display = 'none'">Hide Paragraph</button>
+        <button class="button" onclick="this.parentNode.children[0].style.display = 'block'">Show Paragraph</button>
+    </div>
+</body>
+</html>

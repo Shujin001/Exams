@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Library SYSTEM "library.dtd">
+<Library>
+    <Profile ID="10">
+        <Address>Shankhamul, Kathmandu, Nepal</Address>
+        <Email>library@email.com</Email>
+        <Phone>+977 01 4460441</Phone>
+        <Company name="Nagarjuna College"/>
+    </Profile>
+    <Books>
+        <Book>
+            <Name>Web Technology</Name>
+            <ISBN>ISBN2000</ISBN> 
+            <Author>Prof. Dr. Subarna Shakya</Author>
+        </Book>
+        <Book>
+            <Name>Database Management System</Name>
+            <ISBN>ISBN3000</ISBN> 
+            <Author>Assistant Prof. Kumar Prashun</Author>
+        </Book>
+    </Books>
+</Library>

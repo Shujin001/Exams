@@ -1,0 +1,19 @@
+- xQuery is derived from the Quilt Query Language, which itself borrows from SQL, XQL and XML-QL.
+- xQuery uses (FLWOR format/order):
+        - for ... let ... where ... order by ... return(result) ...
+        - Syntax:
+                for         -> SQL from
+                where       -> SQL where
+                order by    -> SQL order by
+                return      -> SQL select
+                let         -> allows temporary variables, and has no equivalent in SQL.
+- For clause uses XPath expressions, and variable in for clauses ranges over values in the set returned by XPath.
+- Simple FLWOR expression in xQuery
+        - find all courses with credits > 3, with each result enclosed in an <course_id> ... </course_id> tag.
+
+        for $x in /university-3/course_id
+        let $courseId := $x/@course_id
+        where $x/credits > 3
+        return <course_id> {$courseId} </course_id>
+
+        - Items in the return clause are XML test unless enclosed in {}, in which case they are evaluated.

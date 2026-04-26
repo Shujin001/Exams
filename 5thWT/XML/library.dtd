@@ -1,0 +1,12 @@
+<!ELEMENT Library (Profile, Books)>
+<!ELEMENT Profile (Address, Email, Phone, Company)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ATTLIST Profile ID CDATA #REQUIRED>
+<!ATTLIST Company name CDATA #REQUIRED> 
+<!ELEMENT Books (Book)+>
+<!ELEMENT Book (Name, ISBN, Author)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT Author (#PCDATA)>

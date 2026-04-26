@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+XML: eXtensible Markup Language
+   - Structure/Organization of data
+
+API: Application Programming Interface
+   - a modular interface of the system which is able to share
+      data on the network
+
+   - example: Money Deposit Interface of the Bank
+       - Bank sells  "Merchant ID" to authorize
+       - Usecase: E-Commerce Website basically 
+   - Types:
+       - Public API
+       - Private API
+       - Partner API (like - online payment on E-commerce from banking system) 
+   - Architecture of an API
+       - RESTfull (REST) API  {Uses JSON Document}
+       - SOAP API {Uses XML Document}
+       - RPC API (REMOTE PROCEDURE CALL)
+            -RPC -XML
+            -RPC - JSON       
+-->
+<person>
+     <name id="10">Your Full Name</name>
+     <email>email@domain.com</email>
+     <phone>+977 9840051645</phone>
+</person>
+<!-- - XML uses User-Defined elements
+     - where HTML uses pre-defined elements
+     - XML is strict type language
+
+     - To make valid XML 
+       - DTD (Document Type Definition)
+           - Internal & External
+           - 'CDATA' and 'PCDATA' to use
+       - XSD (XML Schema Definition)   
+           - Data Type
+           - Indicators (Order, Group, Occurence(min, max))
+           - Element types in XML (SimpleType or ComplexType)
+           - Facets (Constraints)
+           - Pattern (REGEX)
+       - XSL(T)
+         (XML StyleSheet language - Transformation)
+          - To convert one structure to another
+              - XML to HTML
+              - XML to XML etc
+       - XQuery (XML Query)
+           - Like SQL Query
+           - XQuery uses 'XPath'. example: person/name/@id
+           - As SQL has standard SELECT Query statement
+           XQuery has: FLOWR
+                       F - For
+                       L - Let
+                       0 - Order
+                       W - Where
+                       R - Return   
+               - Tool to work with XQuery: BaseX
+
+To write XML and check in standard way:
+    - Tool: XML Copy Editor  
+
+XML should be:
+    1st: Well Formed
+    2nd: Valid                           
+ -->

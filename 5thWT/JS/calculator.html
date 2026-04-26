@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style type="text/css">
+        .calculator{
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+        .title {margin-bottom: 20px;}
+        .calc-box input[type="text"],
+        .calc-box input[type="number"]{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .calc-box button{
+            width: 20%;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1 class="title">Simple Calculator</h1>
+        <div class="calc-box">
+            <input type="text" id="result" value="" readonly disabled>
+            <input type="number" id="operand1" value="">
+            <input type="number" id="operand2" value="">
+            <button type="button" id="sum">+</button>
+            <button type="button" id="sub">-</button>
+            <button type="button" id="mul">*</button>
+            <button type="button" id="div">/</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let op1 = document.getElementById("operand1");
+        let op2 = document.getElementById("operand2");
+        let res = document.getElementById("result");
+        let operator = document.querySelectorAll("[type*='button']");
+
+        operator.forEach(function(op){
+            op.addEventListener("click", function(){
+                let res = eval(`${op1.value} ${this.innerText} ${op2.value}`);
+                document.getElementById("result").value = res;
+
+            console.log(op1.value, this.value, op2.value);
+            });
+        });
+    </script>
+</body>
+</html>

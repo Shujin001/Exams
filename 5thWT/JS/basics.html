@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of JS</title>
+</head>
+<body>
+    <script>
+        //Array object
+        let students = new Array("Ram", "Shyam", "Hari");
+        //Array literal
+        let fruits = ["Apple", "Banana", "Mango"];
+
+        console.log(students, fruits, Array());
+
+        students.forEach(function(students, index){
+            console.log("Student " + index + ":" + students);
+        });//We are using "indexed array" here
+        //Note: Array itself is an object in JS
+
+        students.push("Gita");
+        //It can add data on above array block from bottom.
+        //We call this concept is "Hoisting" in JS.
+        //h=Hoisrinf is applicable for variable and function mostly.
+
+        students.unshift("Sita");
+        students.splice(2,0,"Krishna");
+            //splice(start_index, delete_count, item1, item2, ...)
+
+        //Remove "Name" from index 1
+        students.splice(1,1);
+        students.pop();
+        students.shift();
+
+        //Array looping
+        for(let i = 0; i< students.length; i++){
+            console.log("Student " + i + ":" + students);
+        };
+
+        //Using fat_arrow (ES6) function as a callback
+        students.forEach((students, index) => {
+            console.log("Student " + index + ":" + students);
+        });
+
+        //Map Method
+        students.map((students, index) => {
+            console.log("Mapped Students " + index + ":" + students);
+        });
+
+        /* Object in JS:
+
+        
+        */
+       let person = {
+        firstName: "Ram",
+        lastName: "Shrestha",
+        age: 25,
+        FullName: function(){
+            return this.firstName + " " + this.lastName;
+        }
+       };
+       console.log(person, Object());
+
+       console.log(
+                Object.entries(person),
+                Object.values(person),
+                Object.keys(person),
+                );
+        //Converts object to array of key-value pairs
+        Object.entries(person).forEach(([key, value]) =>{
+            console.log(`${key}: ${value}`);
+        });
+
+        //JSON: JavaScript Object Notation
+        let jsonData = [
+            {"id":1, "name":"Ram", "email":"ram@example.com"},
+            {"id":2, "name":"Shyam", "email":"shyam@example.com"},
+            {"college":["Nagarjuna College", "Shankhamul", "KTM"]}
+        ];
+        //Array of Objects combination = JSON
+        console.log(jsonData);
+
+        /* API: Application Programme Interface
+            -Set od rules.protocols to interact with software applications
+            -Used for comminication between different software systems
+            -Commonly used in web development to fetch/send data from/to server
+        */    
+        /*    API Types: 
+                
+            -Public API (Open API)
+            -Private API (Internal API)
+            -Partner API (Restricted API)
+            -Composite API (Combination of multiple APIs)
+
+            API architectures:
+                
+            -REST (Representational State Transfer)
+                    -Major Document: JSON (JavaScript Object Notation)
+            -SOAP (Simple Objecct Access Protocol)
+                    -Major Document: XML (eXtensible Markup Language)
+            -RPC (Remote Procedure Call)
+                JSON-RPC
+                XML-RPC
+        */
+       /* Objects:
+            - Built-in Objects
+                -Date, Math, etc.
+            -User-defined Objects
+                - Custom objects created by developers
+       */
+        let date = new Date();
+            console.log(date.toDateString());
+            console.log(date.toLocaleString());
+
+            setInterval(()=>{
+                let today = new Date();
+                document.writeln(date.toLocaleString());
+            }, 1000);
+       
+    </script>
+</body>
+</html>

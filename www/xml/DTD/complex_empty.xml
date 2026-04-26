@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Empty Type Element, attributes on firstname element -->
+<firstname  xmlns:i="http://www.w3.org/2001/XMLSchema-instance" 
+    i:noNamespaceSchemaLocation="complex_empty_schema.xsd"
+    rollnumber="225" />

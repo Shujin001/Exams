@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery (Library of JavaScript)</title>
+    <!--Requires jQuery library link - Lets use CDN
+    - CDN - Content Delivery Network-->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .accordion .title{
+            position: relative;
+            background-color: #F2F2F2;
+            box-shadow: 0 0 1px 0 rgba(0,0,0,0.4);
+            padding: 6px 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .accordion{
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .accordion .detail{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .accordion .title:hover{
+            outline: 1px solid cadetblue;
+        }
+        .accordion .title:after{
+            content: "+";
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(0, -50%);
+        }
+        .accordion .title.expand:after{
+            content: "-";
+        }
+
+    </style>
+</head>
+<body>
+    <div class="para">
+        <p>First content of paragraph</p>
+        <p>Testing JS events</p>
+        <button type="button" id="show">Show Para</button>
+        <button type="button" id="hide">Hide Para</button>
+        <button type="button" id="toggle">Toggle Para</button>
+    </div>
+    <script>
+        let para = jQuery(".para p");
+        let btnShow = $("#show");
+        let btnHide = $("#hide");
+        let btnToggle = $("#toggle");
+
+        btnHide.on("click", function(){
+            para.slideUp(300);
+        });
+        btnShow.on("click", function(){
+            para.slideDown(500);
+        });
+        btnToggle.on("click", function(){
+            para.slideToggle(300);
+        });
+        </script>
+
+        <h1>Accordion with jQuery</h1>
+        <dl class="accordion">
+            <dt class="title expand">Best Colleges in Nepal for BSCCSIT</dt>
+            <dd class="detail">Nagarjuna College of IT</dd>
+            <dt class="title">Why BScCSIT</dt>
+            <dd class="detail">Vocational Subjects and Activities</dd>
+            <dt class="title">Syllabus of BScCSIT</dt>
+            <dd class="detail">
+                <ul>
+                    <li>Web Technology</li>
+                    <li>Maths</li>
+                </ul>
+            </dd>
+            <dt class="title">Affiliation of the faculty</dt>
+            <dd class="detail">Tribhuvan University</dd>
+        </dl>
+        <script>
+            let accord = $(".accordion");
+                dt = $(".accordion .title");
+                dd = $(".accordion .detail");
+            
+            dd.not(":first-of-type").slideUp();
+            dt.click(function(){
+                $(this).toggleClass("expand")
+                .next(dd).slideToggle(300)
+                .siblings(".accordion .detail").slideUp(500);
+
+                $(this).siblings(".accordion .title").removeClass("expand");
+            });
+        </script>
+</body>
+</html>

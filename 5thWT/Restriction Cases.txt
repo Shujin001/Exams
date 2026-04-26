@@ -1,0 +1,19 @@
+Restriction Cases:
+------------------
+
+#1 Restriction on Values
+a) Simple datatype: <xs:element name="age" type="xs:numeric" />
+b) with facets:
+
+simple-xsd
+<xs:element name="age" type="xs:integer" />
+
+facet-xsd
+<xs:element name="age">
+	<xs:simpleType>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="120" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:element>

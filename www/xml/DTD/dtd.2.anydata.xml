@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE person [
+    <!ELEMENT person ANY>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT telephone (#PCDATA)>
+]>
+<person>
+    <name>Chirag Sharma</name>
+    <email>chirag.name@gmail.com</email>
+    <telephone>+977 9745966814</telephone>
+</person>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE person [
+    <!ELEMENT person (name, email, mobile, entities)>
+
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT mobile (#PCDATA)>
+    <!ELEMENT entities (#PCDATA)>
+
+    <!ATTLIST name id CDATA #FIXED "name">
+
+    <!ENTITY nbsp "&#160;">
+    <!ENTITY copy "&#169;">
+    <!ENTITY copyright "2026, All Rights Reserved.">
+]>
+<person>
+    <name id="name">Chirag Sharma</name>
+    <email>chirag.name@gmail.com</email>
+    <mobile>+977 9745966814</mobile>
+    <entities>&copy;&copyright;</entities>
+</person>

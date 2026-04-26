@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Form and JS</title>
+</head>
+
+<body>
+   <pre>
+      Script Events:
+        - Mouse Event (onclick, onmousehover etc.)
+        - Keyboard Event (onkeyup, onkeydown etc.)
+        - Form Event (onsubmit, onfocus etc.)
+        - Window Event (onload, onnorientationchange etc.)
+
+      Context handling:
+         - field's value check (direct/basic technique)
+         - compare string pattern with field's value (REGEX)
+      
+      REGEX: Regular Expression (A string pattern)
+         ex: \^([a-zA-Z]){3}$\g
+             -----------------
+              [a-zA-Z]  : support small and capital letter
+              (3)       : limit of character in string
+              \g        : global flag         
+              $         : fixed end
+
+         -- REGEX methods in JS:
+                 pattern: var regex_pattern = /^([a-zA-Z]){3}$/
+                 - fieldValue.match(regex_pattern)
+                 - regex_pattern.test(fieldValue)
+
+         -- Documents:
+                 - regexr.com
+                 - regex101.com   
+
+         ex: email basic pattern:
+               let emailRegex = /^([A-Za-z])+\w(@)[a-z]+\w+(.)[a-z]{3}$/g
+               
+               if(email.value.match(emailRegex)) {...}
+               else {...}
+
+   </pre>
+   
+   <h1>Form Validation</h1>
+   <pre>
+      Validation:
+         - Form Validation (Client Side Validation)
+               - HTML5 Validation
+               - JavaScript Validation
+         -Server Side Validation
+               - language dependent
+         - Data level Validation
+               - in Database: ex: Constraints
+                                   - Domain Constraint
+                                   - Key Constraint etc.
+                                   
+         Note: To apply JS validation, ignore HTML5 validation using:
+                  - "novalidate" attribute in form tag                          
+   </pre>
+   <form action="#" method="post" name="user_form" novalidate>
+      <div class="feild-group">
+         <label for="fname">Full Name</label>
+         <input type="text" id="fname" name="fname" value="" required>
+      </div>
+      <div class="feild-group">
+         <label for="email">E-mail</label>
+         <input type="email" id="email" name="email" value="" required>
+      </div>
+      <button type="submit" name="submit">Submit</button>
+   </form>
+   <script>
+      /*  DOM Element selectors in JS:
+           - document.getElementById("idname");
+           - document.getElementByTagName("tagname");
+           - document.getElementByClassName("classname");
+           - document.querySelector("CSS_Selectors");
+           - document.querySelectorAll("CSS_Selectors");
+           - document.form_name & document.form_name.field_name
+      */
+     let form = document.user_form,
+           fullname = form.fname,
+           email = form.email;
+
+      let eleArr = [fullname, email];
+      eleArr.forEach(item => {//fat arrow functionof ES6
+         let span = document.createElement('span');
+         span.classList.add('err');
+         item.parentNode.append(span);
+         });
+
+      //form.addEventListener("event", callback_function());
+      form.addEventListener("submit", function(e) {
+         if(fullname.value == "") {
+            e.preventDefault(); //stops page reload or submission
+            fullname.nextElementSibling.innerText = "Full Name is required.";
+         } else {
+            fullname.nextElementSibling.innerText = "";
+         }
+         if(email.value == "") {
+            e.preventDefault();
+            email.nextElementSibling.innerText = "Email is required.";
+         } else {
+            email.nextElementSibling.innerText = "";
+         }
+      });
+
+      email.addEventListener("keyup", function() {
+         let emailRegex = /^([A-Za-z])+\w(@)[a-z]+\w+(.)[a-z]{3}$/g
+         if(this.value.match(emailRegex) == null) {
+            this.nextElementSibling.innerText = "Email invalid";
+         } else {
+            this.nextElementSibling.innerText = "";
+         }
+      });
+   </script>
+</body>
+</html>

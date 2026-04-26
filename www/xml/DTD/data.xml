@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- On root: "xmlns" default namespace,
+            which provides further information to the Schema
+            from XML Instances (XML document)
+    - On root: "xmlns:i" Schema namespace using valid URL
+    - Schema located on: https://localhost:8000/xml-xsd
+    - i:schemaLocation="http://localhost:8000/xml-xsd
+    schema-file-path-goes-here"
+-->
+<note xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="data.xsd">
+    <to>Hari</to>
+    <from>Chirag</from>
+    <heading>Remainder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns:i="http://www.w3.org/2001/XMLSchema-instance" 
+    i:noNamespaceSchemaLocation="data_group_schema.xsd">
+    <!--in XSD, group indicator not accepting without import of namespace like:
+        So, we used noNamespaceSchemaLocation attribute.
+    -->
+    <firstname>Chirag</firstname>
+    <lastname>Sharma</lastname>
+    <email>info@chiragsharma.name.np</email>
+</person>

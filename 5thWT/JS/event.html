@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Practice</title>
+</head>
+<body>
+    <div class="para">
+        <p>First content of paragraph</p>
+        <p>Testing JS events</p>
+        <button type="button" id="show">Show Para</button>
+        <button type="button" id="hide">Hide Para</button>
+    </div>
+    <script type="text/javascript">
+        try{
+        let para = document.querySelectorAll("p")
+        let btnShow = document.getElementById("show");
+        let btnHide = document.getElementById("hide");
+
+        btnHide.addEventListener("click", function(){
+            para.forEach(p => {
+                p.style.display = "none";
+                //setTimeout(()=>{
+                //    p.style.display = "none";
+                //},1000);
+            });
+        });
+        btnShow.addEventListener("click", function(){
+            para.forEach(p => {
+                p.style.display = "block";
+            });
+        });
+    } catch(err){
+        console.log(err);
+    }
+    </script>
+</body>
+</html>

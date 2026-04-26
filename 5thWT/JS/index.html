@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Foundation of JS</title>
+</head>
+<body>
+   <pre>
+       Pre-Requisites
+          -HTML and DOM understanding
+          -Basic Programming Logic (ex: C) (optional)
+
+      JS: JavaScript (Naming in PascalCase)    
+       - Old name; EcmaScript (ES)
+       - Versioning: ES1 .... ES5, ES6
+       - Major version: ES5 and ES6
+       - In our Syllabus: ES5 basics/concept
+       - Properties/Attributes and Methods/Functions naming in camelCase
+
+       Languages:
+      - Markup Language (HTML, XHTML, XML)
+      - Stylesheet language (CSS, and CSS preprocessors (SASS, SCSS, LESS etc) )
+      - Scripting language
+            - Client-side scripting: JavaScript
+            - Server-side scripting: PHP (Hypertext Pre-Processor)
+                       - PHP old name: Personal Home Page
+      - Programming Language (C/C++ etc.)  
+           - High level
+           - Low level
+              - Assembly
+              - Machine level  
+
+       Naming Convention:
+           - lowercasenaming
+           - snake_case_naming
+           - hyphen-case-naming
+           - camelCaseNaming
+           - PascalCaseNaming
+
+      Data Types in JS:
+           - String
+           - Number (int, float)
+           - UNDEFINED
+           - NULL
+           - BOOLEAN etc.    
+           
+      Data Typing:
+           - Static typing (C/C++)
+                 - ex: int num1;
+
+                 Note: Executes/Runs in Compile Time
+
+           - Dynamic typing (JS/PHP) 
+                 - ex: in JS: var num1;       
+                 - ex: in PHP: $num1;
+
+                 Note: Executes/Runs in Runtime            
+   </pre>
+   <h1>Practice</h1>
+   <script type="text/javascript"> // nalekheni bhayo tara lekhesi right lekhnu lowercase for javascript
+      //single line comment
+
+      /* Multi 
+         line
+         comment */
+
+      //Variable and operation
+      var num1 = 10; //Declaration and definition at
+      var name; //Declaration
+      name = "Upasana Thapa"; //Definition (Value Assignment/Processing)
+
+      /*
+         Variable making:
+             - var    : Redeclare and Redefine is allowed
+             - let    : Redeclare is not allopwed, but Redefine is allowed
+             - const  : Redeclare and Redefine is not allowed
+            */
+    var a; //declare
+    a = 10;//define
+    var a;//redeclare
+    a = 20; //define
+    a = 22; //redefine
+   
+    let b;//declare
+    b=20; //define
+    b = 24; //redefine (allowed)
+    // let b; //redeclare (not allowed)
+
+    const Pi = 3.14; //Redeclare and redefine must be in a line
+
+      /*Data types
+          - Built-in (Pre-defined)
+              - String, Number (int,float), BOOLEAN, UNDEFINED, NULL etc.
+          - User-defined
+              - Array, Object
+              */  
+      let email ="info@domain.com"; //string
+      let cgpa = 3.6; //Number (float)  
+      let rollno = 11; //Number(integer)
+      let status = true; //BOOLEAN
+
+      //to test as developer
+       alert(email); // results on popup box
+       console.log(cgpa); //mostly used
+       document.writeln(rollno); // results in browser window/page
+
+       /* statement techniques
+        */
+       //string concatenation
+       let addr ="KTM";
+       //ES5
+       let profile = "Chirag Sharma, " + addr;  //concatenated using  +
+       //New way(ES6)
+       let detail = `Chirag Sharma ${addr}`; //template string using back-tick
+
+       //Math operation: eval()
+       let n1, n2, res, op;
+             n1 = 10;
+             n2 = 20;
+             op = "+";
+             res = eval(`${n1} ${op} ${n2}`);
+
+       console.log(res);
+
+       /* Popup boxes
+           - alert() helps to show context/results
+           - prompt() helps to read data from user
+           - confirm() helps to decide Ok/Cancel
+       */
+      let operand1, operand2, operator;
+      operand1 = prompt("Enter first number: ");
+      operand2 = prompt("Enter second number: ");
+      operator = prompt("Enter operator to perform: ");
+      let result = eval(`${operand1} ${operator} ${operand2}`);
+
+      let process = confirm("Do you want to calculate?");
+
+      if(process == true) 
+          alert(`${operand1} ${operator} ${operand2} = ${result}`);
+      else alert("You cancelled the calculation.");
+   </script>
+</body>
+</html>

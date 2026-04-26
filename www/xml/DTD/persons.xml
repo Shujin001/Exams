@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="persons.xsl"?>
+<personData>
+    <user id="1">
+        <fname>James</fname>
+        <lname>Bond</lname>
+        <price>200</price>
+        <email>james@gmail.com</email>
+    </user>
+    <user id="2">
+        <fname>John</fname>
+        <lname>Smith</lname>
+        <price>400</price>
+        <email>john@gmail.com</email>
+    </user>
+</personData>

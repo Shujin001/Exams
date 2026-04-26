@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic of PHP</title>
+</head>
+<body>
+    <?php echo "First PHP Project"; ?>
+    <pre>
+        PHP Variable - $ symbol 
+
+        example- $name = "Your Name";
+    </pre>
+    <?php $name= "Your Name"; echo $name; ?>
+    <h2>Data Typing</h2>
+    <ul>
+        <li>Static Typing (C/C++ etc) </li>
+        <li>Dynamic Typing (JS/PHP etc)</li>
+    </ul>
+    <h2>Data Types</h2>
+    <pre>
+        - String
+        - Number (Integer / Float)
+        - BOOLEAN
+
+        Major
+            - Built-in or Pre0defined data Types
+            - User defined data types (ex- array)
+    </pre>
+    <h3>Array in PHP</h3>
+    <pre>
+        Note- Dimensions similar to C programming
+        Types- 
+            - Indexed Array:        array('Name', 20)
+            - Associative Array:    array('name' => 'Name', 'age' => 20 )
+        array construction
+            - array method: array('Name', 20)
+            - array literal: ['Name', 20]   (>=php 7.0)
+    </pre>
+    <?php   
+    $id = 20; //INTEGER(NUMBER)
+    $name = "Student Name";//STRING
+    $email = "std@domain.com";//STRING
+    $status = true; //BOOLEAN
+    /*$student = [
+                        'id' => 20, 
+                        'name' => 'Student 1', 
+                        'email' => 'std@domain.com'
+                    ];*/
+    $student = [
+                        'id' => $id, 
+                        'name' => $name, 
+                        'email' => $email
+                    ];              
+    $user = [1, 'First User', 'user@email.com'];//Direct data
+    $std = array($id, $name, $email); //Data from variable
+    echo count($std);
+    for($i = 0; $i < count($std); $i++){
+        echo"<hr>" . $std[$i];
+    }
+    for($i = 0; $i < 1; $i++){
+        
+        echo"<hr>" . $student['email'];
+    }
+    //foreach loop in PHP 
+    array_push($student, "KTM, Nepal");
+    array_pop($student);
+    array_unshift($student, 1);
+    array_shift($student);
+    array_splice($student, 2, 0, "BSc.CSIT");//add on mid of array
+    array_splice($student, 2, 1);//delete from mid of array
+
+    foreach($student as $value){
+        echo "<hr>" . $value;
+    }
+    foreach($student as $key => $value){
+        echo "<hr><strong>" . ucfirst($key) . "</strong>:" . $value;
+    }
+    ?>
+</body>
+</html>

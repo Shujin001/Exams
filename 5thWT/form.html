@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Structure</title>
+</head>
+
+<body>
+    <main id="main">
+        <h1 class="page-title">HTML Form</h1>
+        <form action="#" method="GET" name="form_name">
+            <!-- Mandatory attribute of form tag: action and method
+            
+            Fields:
+                -Tag: input, select, textarea
+                -Input types: text, checkbox, radio, submit(Makes button)
+                -Input types HTML5: number, date, datetime, range, email, etc. 
+            -->
+            <input type="text" name="fullname" value="" placeholder="Ex: Chirag Sharma">
+            <!--<input .../> on closing: trailing slash is removed by HTML5-->
+            <input type="text" name="phone" value="" placeholder="Phone">
+
+            <label>
+                Address:
+                <input type="text" name="addr" value="" placeholder="Address">
+            </label>
+            <!-- New technique (Relating: for of label & id of input)-->
+            <div class="field-group">
+                <label for="em">E-mail</label>
+                <input type="email" id="em" name="email" value="" placeholder="info@domain.com">
+            </div>
+            <!--Form buttons: submit, reset -->
+            <input type="submit" name="submit" value="Send Message">
+            <button type="reset" name="reset">Reset Form Data</button>
+        </form>
+        <pre>
+            Form Submission:
+                -Methods:
+                    GET: Submits data passing from URL as a "Query String Parameter"
+                    POST: Submits data hiddenly.
+                -Action: Path to the logic (Where to submit?)
+        </pre>
+
+        <h2>Form with file field</h2>
+        <form action="#" method="post" name="file_form" enctype="multipart/form-data">
+            <!-- If contains "file" input and form has post method, 
+            it requires "enctype"
+            
+            Because:
+            File input with GET method:
+                -Submits filename (string) only.
+
+            File input with POST method:
+                -Submits:
+                    multiple attribute od image that required encryption to make string, 
+                    because, form submission works with string.
+
+                    File attributes:
+                        -nmae, tmp_name, oath, size, error, type(MIME_Type).
+
+                        -MIME Type ex: image/jpg, image/png, etc.
+            -->
+            <div class="field-group">
+                <label for="photo">Photo</label>
+                <input type="file" name="photo" id="photo" value="">
+            </div>
+            <button type="submit" name="submit">Upload</button>
+        </form>
+    </main>
+</body>
+
+</html>
