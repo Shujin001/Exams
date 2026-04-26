@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lab 1</title>
+  </head>
+  <body>
+    <h1 id="header">Original Title</h1>
+    <p id="description">Click the button to change this text using the DOM.</p>
+
+    <button onclick="changeContent()">Update Page</button>
+
+    <script>
+      function changeContent() {
+        let title = document.getElementById("header");
+        let text = document.getElementById("description");
+
+        title.innerHTML = "DOM has been Manipulated!";
+
+        text.style.color = "blue";
+        text.style.fontWeight = "bold";
+        text.innerHTML =
+          "The JavaScript function successfully accessed the DOM tree.";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show and Hide Content</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Vanilla JavaScript Show/Hide</h2>
+    <p id="jsPara">This paragraph is controlled by Vanilla JS.</p>
+    <button onclick="toggleJS()">Toggle with JS</button>
+
+    <hr>
+
+    <h2>jQuery Show/Hide</h2>
+    <p id="jqPara">This paragraph is controlled by jQuery.</p>
+    <button id="jqBtn">Toggle with jQuery</button>
+
+    <script>
+        function toggleJS() {
+            let p = document.getElementById("jsPara");
+            if (p.style.display === "none") {
+                p.style.display = "block";
+            } else {
+                p.style.display = "none";
+            }
+        }
+        $(document).ready(function() {
+            $("#jqBtn").click(function() {
+                $("#jqPara").toggle();
+            });
+        });
+    </script>
+</body>
+</html>

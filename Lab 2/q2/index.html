@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Report - Question 2</title>
+</head>
+<body>
+    <h1>Array and Digit Analysis</h1>
+    <div id="array-output"></div>
+    <div id="digit-output"></div>
+
+    <script>
+        const numbers = [45, 12, 89, 2, 67, 34, 91, 56, 23, 10];
+        let largestArr = numbers[0];
+        let smallestArr = numbers[0];
+
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] > largestArr) largestArr = numbers[i];
+            if (numbers[i] < smallestArr) smallestArr = numbers[i];
+        }
+
+        document.getElementById("array-output").innerHTML = 
+            "Array: " + numbers.join(", ") + "<br>" +
+            "Largest in Array: " + largestArr + "<br>" +
+            "Smallest in Array: " + smallestArr;
+
+        const num = 73915;
+        const digits = Array.from(String(num), Number);
+        const largestDigit = Math.max(...digits);
+        const smallestDigit = Math.min(...digits);
+
+        document.getElementById("digit-output").innerHTML = 
+            "<br>Number: " + num + "<br>" +
+            "Largest Digit: " + largestDigit + "<br>" +
+            "Smallest Digit: " + smallestDigit;
+    </script>
+</body>
+</html>

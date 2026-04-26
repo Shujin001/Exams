@@ -1,0 +1,39 @@
+body { font-family: Arial, sans-serif; padding: 20px; background: #eee; }
+.invoice-box { width: 750px; margin: auto; background: white; border: 1px solid #ccc; }
+.top-bar, .bottom-bar { background-color: #e05e2e; height: 15px; }
+
+header { display: flex; justify-content: space-between; padding: 30px; background: #f9f9f9; }
+.company-section { display: flex; align-items: center; }
+.logo { background: #666; color: white; width: 70px; height: 70px; border-radius: 50%; 
+        display: flex; align-items: center; justify-content: center; margin-right: 20px; font-weight: bold; }
+.company-details { font-size: 13px; color: #444; }
+
+.invoice-meta { text-align: right; }
+.invoice-meta h1 { color: #999; margin: 0; font-size: 28px; }
+.invoice-meta p { border-bottom: 1px solid #ddd; width: 150px; margin: 10px 0 0 auto; padding-bottom: 2px; font-size: 11px; font-weight: bold; }
+
+.terms-row { text-align: right; padding: 0 30px 10px; font-size: 11px; font-style: italic; }
+
+.billing-container { display: flex; justify-content: space-between; padding: 20px 30px; font-size: 12px; }
+.bill-to, .ship-to { width: 45%; }
+.bill-to h3, .ship-to h3 { font-size: 13px; border-bottom: 2px solid #e05e2e; margin-bottom: 10px; width: 80%; }
+
+.items-table { width: 100%; border-collapse: collapse; }
+.items-table th { background: #e05e2e; color: white; padding: 10px; border: 1px solid #fff; }
+.items-table td { border: 1px solid #ddd; padding: 12px; height: 20px; background-color: inherit; }
+.items-table tbody tr:nth-child(even) { background-color: #f9f9f9; }
+
+.footer-container { display: flex; justify-content: flex-end; padding: 20px; }
+.totals-table td { padding: 5px 15px; text-align: right; font-size: 12px; }
+.remarks { text-align: left !important; vertical-align: top; width: 300px; border: none !important; font-size: 11px; }
+
+.shadow-cell { 
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.15) !important; 
+    border: 1px solid #ccc !important;
+    background-color: white !important;
+    width: 100px;
+}
+
+.balance-row { font-weight: bold; font-size: 16px !important; }
+.colored-cell { background-color: #f2dede !important; border: 1px solid #dca7a7 !important; padding: 15px !important; }
+.no-bg { background-color: white !important; border: none !important; padding-right: 10px; }

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Map Demo</title>
+  </head>
+  <body>
+    <h1>Image Map with Rectangle, Circle, and Polygon</h1>
+    <p>Click the different areas of the image.</p>
+
+    <img src="https://placehold.co/600x400" alt="Demo image" usemap="#shapes" />
+
+    <map name="shapes">
+      <area
+        shape="rect"
+        coords="50,50,200,150"
+        href="rectangle.html"
+        alt="Rectangle"
+      />
+      <area
+        shape="circle"
+        coords="420,120,60"
+        href="circle.html"
+        alt="Circle"
+      />
+      <area
+        shape="poly"
+        coords="300,250,350,300,320,360,260,340,240,280"
+        href="polygon.html"
+        alt="Polygon"
+      />
+    </map>
+  </body>
+</html>

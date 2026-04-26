@@ -1,0 +1,37 @@
+root {
+    display: block;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    display: block;
+    background-color: #008000;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+category {
+    display: block;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px 0;
+}
+
+title {
+    display: block;
+    color: #008000;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+item1 { display: block; color: #008000; font-weight: bold; }
+item2 { display: block; color: #a52a2a; font-weight: bold; }
+item3 { display: block; color: #0000ff; font-weight: bold; }
+item4 { display: block; color: #daa520; font-weight: bold; }

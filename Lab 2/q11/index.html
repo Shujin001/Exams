@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Cookies Demo</title>
+</head>
+<body>
+
+    <h2>Cookie Management</h2>
+    
+    <input type="text" id="username" placeholder="Enter Username">
+    <button onclick="setCookie()">Set Cookie</button>
+    <button onclick="getCookie()">Show Cookie</button>
+    <button onclick="deleteCookie()">Delete Cookie</button>
+
+    <p id="output"></p>
+
+    <script>
+        function setCookie() {
+            let name = document.getElementById("username").value;
+            let d = new Date();
+            d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            
+            document.cookie = "user=" + name + ";" + expires + ";path=/";
+            alert("Cookie has been set!");
+        }
+
+        function getCookie() {
+            let name = "user=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            let foundValue = "No cookie found";
+
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(name) == 0) {
+                    foundValue = "Saved User: " + c.substring(name.length, c.length);
+                }
+            }
+            document.getElementById("output").innerHTML = foundValue;
+        }
+
+        function deleteCookie() {
+            document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert("Cookie deleted!");
+            document.getElementById("output").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>

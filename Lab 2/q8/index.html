@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+    <style>
+        .error { color: red; font-size: 11px; display: block; height: 15px; }
+        .form-container { width: 500px; padding: 20px; font-family: sans-serif; }
+        .row { display: flex; gap: 15px; margin-bottom: 5px; }
+        .col { flex: 1; }
+        input, select, textarea { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #333; }
+        .required { color: red; }
+        fieldset { border: 1px solid black; padding: 20px; }
+        legend { font-weight: bold; padding: 0 5px; font-size: 1.2em; }
+        .submit-btn { background: #3d3d3d; color: white; padding: 10px 40px; border: none; cursor: pointer; display: block; margin: 20px auto 0; }
+        .terms-row { display: flex; align-items: center; gap: 5px; margin-top: 10px; }
+        .terms-row input { width: auto; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form id="regForm" onsubmit="return validateForm(event)">
+        <fieldset>
+            <legend>Register</legend>
+            
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="fullName" placeholder="Full Name*" onkeyup="checkName()">
+                    <span id="nameErr" class="error"></span>
+                </div>
+                <div class="col">
+                    <input type="text" id="email" placeholder="E-Mail*">
+                    <span id="emailErr" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="username" placeholder="Username*">
+                    <span id="userErr" class="error"></span>
+                </div>
+                <div class="col">
+                    <input type="password" id="pass" placeholder="Password*" onkeyup="checkPass()">
+                    <span id="passErr" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <select id="services" onchange="validateService()">
+                        <option value="">Services*</option>
+                        <option value="Web Design">Web Design</option>
+                        <option value="App Development">App Development</option>
+                    </select>
+                    <span id="serviceErr" class="error"></span>
+                </div>
+                <div class="col">
+                    <input type="password" id="confirmPass" placeholder="Confirm Password*">
+                    <span id="confirmErr" class="error"></span>
+                </div>
+            </div>
+
+            <textarea id="message" placeholder="Write your comment here." maxlength="200" rows="4"></textarea>
+            <span id="msgErr" class="error"></span>
+
+            <div class="terms-row">
+                <input type="checkbox" id="terms"> 
+                I agree to the <a href="#">Terms and Conditions</a><span class="required">*</span>
+            </div>
+            <span id="termsErr" class="error"></span>
+
+            <p class="required">* Required fields</p>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </fieldset>
+    </form>
+</div>
+
+<script>
+function checkName() {
+    let name = document.getElementById("fullName").value;
+    let err = document.getElementById("nameErr");
+    err.innerHTML = name.length > 20 ? "Limit: 20 characters" : "";
+}
+
+function checkPass() {
+    let pass = document.getElementById("pass").value;
+    let err = document.getElementById("passErr");
+    err.innerHTML = pass.length > 0 && pass.length <= 8 ? "Must be > 8 characters" : "";
+}
+
+function validateService() {
+    let service = document.getElementById("services").value;
+    document.getElementById("serviceErr").innerHTML = service === "" ? "Please select a service" : "";
+}
+
+function validateForm(e) {
+    let isValid = true;
+    
+    let name = document.getElementById("fullName").value;
+    let email = document.getElementById("email").value;
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("pass").value;
+    let cpass = document.getElementById("confirmPass").value;
+    let terms = document.getElementById("terms").checked;
+    let service = document.getElementById("services").value;
+
+    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    let userPattern = /^[a-zA-Z]+[0-9]+$/;
+
+    document.querySelectorAll(".error").forEach(el => el.innerHTML = "");
+
+    if (!name || !email || !user || !pass || !cpass || !terms || !service) {
+        alert("Please fill all required fields");
+        isValid = false;
+    }
+
+    if (name.length > 20) isValid = false;
+
+    if (!emailPattern.test(email)) {
+        document.getElementById("emailErr").innerHTML = "Invalid email format";
+        isValid = false;
+    }
+
+    if (!userPattern.test(user)) {
+        document.getElementById("userErr").innerHTML = "Starts with letters then numbers";
+        isValid = false;
+    }
+
+    if (pass.length <= 8) isValid = false;
+
+    if (pass !== cpass) {
+        document.getElementById("confirmErr").innerHTML = "Passwords do not match";
+        isValid = false;
+    }
+
+    if (!isValid) {
+        e.preventDefault();
+        return false;
+    }
+    
+    alert("Form submitted successfully!");
+    return true;
+}
+</script>
+
+</body>
+</html>

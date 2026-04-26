@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Mastery</title>
+</head>
+<body>
+    <h1>JavaScript Object Operations</h1>
+    <script>
+        let obj1 = { brand: "Toyota", model: "Corolla" };
+        let obj2 = new Object();
+        obj2.type = "Electric";
+
+        console.log(Object.getPrototypeOf(obj1));
+
+        obj1 = { id: 1, ...obj1 };
+
+        obj1.year = 2024;
+
+        let firstKey = Object.keys(obj1)[0];
+        delete obj1[firstKey];
+
+        let keys = Object.keys(obj1);
+        delete obj1[keys[keys.length - 1]];
+
+        obj1.color = "Blue";
+        delete obj1.model;
+
+        for (let key in obj1) {
+            console.log(key + ": " + obj1[key]);
+        }
+
+        console.log("Brand property: " + obj1.brand);
+
+        const student = { name: "John", age: 20, city: "Kathmandu" };
+        const { name, city } = student;
+        console.log("Destructured: " + name + " from " + city);
+
+        let dateObj = new Date();
+        console.log("Built-in Date Object: " + dateObj.getFullYear());
+    </script>
+</body>
+</html>

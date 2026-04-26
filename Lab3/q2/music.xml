@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<music_library>
+    <song>
+        <name>Bohemian Rhapsody</name>
+        <singer>Queen</singer>
+        <compose_by>Freddie Mercury</compose_by>
+        <length>5:55</length>
+    </song>
+    <song>
+        <name>Blinding Lights</name>
+        <singer>The Weeknd</singer>
+        <compose_by>Max Martin</compose_by>
+        <length>3:20</length>
+    </song>
+    <song>
+        <name>Shape of You</name>
+        <singer>Ed Sheeran</singer>
+        <compose_by>Steve Mac</compose_by>
+        <length>3:53</length>
+    </song>
+    <song>
+        <name>Hotel California</name>
+        <singer>Eagles</singer>
+        <compose_by>Don Felder</compose_by>
+        <length>6:30</length>
+    </song>
+</music_library>

@@ -1,0 +1,26 @@
+body { font-family: Arial; padding: 20px; }
+
+fieldset { 
+    border: 1px solid gray; 
+    width: 600px; 
+    padding: 25px;
+}
+
+legend {
+    margin: 0 auto;
+    padding: 0 15px;
+    font-weight: bold;
+}
+
+td {
+    padding: 10px;
+}
+
+input[type="text"] {
+    width: 95%;
+    border: 1px solid orange;
+    padding: 5px;
+}
+
+.btn-reg { background: blue; color: white; border: none; padding: 8px 15px; }
+.btn-clr { background: deeppink; color: white; border: none; padding: 8px 15px; }

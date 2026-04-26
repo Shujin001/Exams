@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2 style="color: salmon">Registration Form</h2>
+    <form>
+      <fieldset>
+        <legend>Personal Details</legend>
+        <table border="1" cellpadding="10" cellspacing="0" width="100%">
+          <tr>
+            <td>Name</td>
+            <td><input type="text" placeholder="Enter Name" /></td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="g" /> Male
+              <input type="radio" name="g" /> Female
+            </td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <select style="width: 100%">
+                <option>Select Country</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Message</td>
+            <td><textarea rows="3" style="width: 95%"></textarea></td>
+          </tr>
+          <tr>
+            <td>Image</td>
+            <td><input type="file" /></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="checkbox" /> I Accept Term & Condition
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button class="btn-reg">Register</button>
+              <button class="btn-clr">Clear</button>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Arithmetic Functions</title>
+    <style>
+        .calc-box {
+            width: 350px;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #f4f4f4;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        input {
+            width: 45%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 2px;
+        }
+        .result-box {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #333;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calc-box">
+        <h3>Basic Arithmetic Functions</h3>
+        
+        <div class="inputs">
+            <input type="number" id="op1" placeholder="Operand">
+            <input type="number" id="op2" placeholder="Operand">
+        </div>
+
+        <div class="buttons">
+            <button onclick="calc('add')">ADD</button>
+            <button onclick="calc('sub')">SUB</button>
+            <button onclick="calc('mul')">MUL</button>
+            <button onclick="calc('div')">DIV</button>
+            <button onclick="calc('mod')">MOD</button>
+        </div>
+
+        <h4>Result</h4>
+        <input type="text" id="res" class="result-box" readonly>
+    </div>
+
+    <script>
+        function calc(operation) {
+            let n1 = parseFloat(document.getElementById("op1").value);
+            let n2 = parseFloat(document.getElementById("op2").value);
+            let result = 0;
+
+            if (isNaN(n1) || isNaN(n2)) {
+                alert("Please enter both numbers");
+                return;
+            }
+
+            switch(operation) {
+                case 'add': result = n1 + n2; break;
+                case 'sub': result = n1 - n2; break;
+                case 'mul': result = n1 * n2; break;
+                case 'div': result = n2 !== 0 ? n1 / n2 : "Error (Div by 0)"; break;
+                case 'mod': result = n1 % n2; break;
+            }
+
+            document.getElementById("res").value = result;
+        }
+    </script>
+
+</body>
+</html>

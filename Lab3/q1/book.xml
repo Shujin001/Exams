@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book>
+        <title>JavaScript: The Good Parts</title>
+        <author>Douglas Crockford</author>
+        <ISBN>978-0596517748</ISBN>
+        <publisher>O'Reilly Media</publisher>
+        <edition>1st Edition</edition>
+        <price>29.99</price>
+    </book>
+    <book>
+        <title>Eloquent JavaScript</title>
+        <author>Marijn Haverbeke</author>
+        <ISBN>978-1593279509</ISBN>
+        <publisher>No Starch Press</publisher>
+        <edition>3rd Edition</edition>
+        <price>35.50</price>
+    </book>
+</bookstore>

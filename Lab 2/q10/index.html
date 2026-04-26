@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock and Math Object</title>
+    <style>
+        .clock-container {
+            border: 2px solid black;
+            padding: 20px;
+            width: 500px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock-container" id="display">
+        Loading...
+    </div>
+
+    <div id="math-demo">
+        <h3>Math Object Demo</h3>
+        <p id="math-res"></p>
+    </div>
+
+    <script>
+        function updateClock() {
+            let d = new Date();
+            
+            let date = d.getDate();
+            let year = d.getFullYear();
+            
+            let months = ["January", "February", "March", "April", "May", "June", 
+                          "July", "August", "September", "October", "November", "December"];
+            let monthName = months[d.getMonth()];
+
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let dayName = days[d.getDay()];
+
+            let h = d.getHours();
+            let m = d.getMinutes();
+            let s = d.getSeconds();
+            let ampm = h >= 12 ? 'PM' : 'AM';
+            
+            h = h % 12;
+            h = h ? h : 12; 
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            s = s < 10 ? '0' + s : s;
+
+            let suffix = "th";
+            if (date === 1 || date === 21 || date === 31) suffix = "st";
+            else if (date === 2 || date === 22) suffix = "nd";
+            else if (date === 3 || date === 23) suffix = "rd";
+
+            let dateStr = date + suffix + " " + monthName + " " + year;
+            let timeStr = h + ":" + m + ":" + s + " " + ampm;
+            
+            document.getElementById("display").innerHTML = dateStr + " &nbsp;&nbsp; " + timeStr + " &nbsp;&nbsp; " + dayName;
+        }
+
+        function demoMath() {
+            let randomNum = Math.floor(Math.random() * 100);
+            let powerVal = Math.pow(2, 3);
+            let piVal = Math.PI;
+
+            document.getElementById("math-res").innerHTML = 
+                "Random (0-99): " + randomNum + "<br>" +
+                "2 to the power of 3: " + powerVal + "<br>" +
+                "Value of PI: " + piVal.toFixed(2);
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+        demoMath();
+    </script>
+
+</body>
+</html>

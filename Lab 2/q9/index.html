@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Windows, Frames, and Noscript</title>
+    <style>
+        .frame-container { border: 2px solid #333; padding: 10px; margin-top: 20px; }
+        iframe { width: 100%; height: 200px; border: 1px dashed red; }
+        .no-js-banner { background: #ffcccc; padding: 10px; border: 1px solid red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Windows & Frames Demonstration</h1>
+
+    <noscript>
+        <div class="no-js-banner">
+            Warning: JavaScript is disabled! Some features on this page will not work.
+        </div>
+    </noscript>
+
+    <div>
+        <h3>Window Operations</h3>
+        <button onclick="openWin()">Open New Window</button>
+        <button onclick="closeWin()">Close New Window</button>
+    </div>
+
+    <div class="frame-container">
+        <h3>IFrame Content</h3>
+        <iframe src="about:blank" id="myFrame"></iframe>
+        <br><br>
+        <button onclick="updateFrame()">Load Content into Frame</button>
+    </div>
+    <script>
+        let newWindow;
+
+        function openWin() {
+            newWindow = window.open("", "TestWindow", "width=400,height=400");
+            newWindow.document.write("<h2>This is a new window!</h2>");
+        }
+
+        function closeWin() {
+            if (newWindow) {
+                newWindow.close();
+            } else {
+                alert("No window is currently open.");
+            }
+        }
+
+        function updateFrame() {
+            let frame = document.getElementById("myFrame");
+            frame.src = "https://www.wikipedia.org";
+        }
+    </script>
+</body>
+</html>

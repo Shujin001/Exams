@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popups and DOM</title>
+</head>
+<body>
+
+    <button onclick="alert('Hello!')">Alert</button>
+    <button onclick="confirm('Proceed?')">Confirm</button>
+    <button onclick="prompt('Name?')">Prompt</button>
+
+    <p id="myP">Original Text</p>
+    
+    <button onclick="addAndChange()">Modify</button>
+    <button onclick="document.getElementById('myP').remove()">Remove</button>
+
+    <script>
+        function addAndChange() {
+            let p = document.getElementById("myP");
+            p.style.backgroundColor = "cyan";
+            
+            let s = document.createElement("span");
+            s.innerHTML = "New Info: ";
+            p.prepend(s);
+        }
+    </script>
+</body>
+</html>

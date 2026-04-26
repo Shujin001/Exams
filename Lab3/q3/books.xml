@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book_records xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd">
+    <book isbn="978-3-16-148410-0">
+        <name>
+            <first>John</first>
+            <middle>Ram</middle>
+            <last>Doe</last>
+        </name>
+        <email>example@example.com</email>
+        <author>Author One</author>
+        <author>Author Two</author>
+        <page_no>450</page_no>
+        <price>550.00</price>
+    </book>
+</book_records>
